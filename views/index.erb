@@ -32,16 +32,15 @@
       <div class="row">
         <div class="col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-8">
           <ul class="list-group">
-            <button type="button"  class="list-group-item">Antenne MV</button>
-            <button type="button"  class="list-group-item disabled">
-              <span class="badge">
-                <span class="glyphicon glyphicon-play-circle"></span>
-              </span>
-              Lohro 90,2</button>
-            </button>
-            <button type="button"  class="list-group-item">Flux FM</button>
-            <button type="button"  class="list-group-item">Radio Bremen</button>
-            <button type="button"  class="list-group-item">Fritz</button>
+            <% stations.each do |station| %>
+              <button type="button"  class="list-group-item">
+              <% if station[:active]%>
+                <span class="badge">
+                  <span class="glyphicon glyphicon-play-circle"></span>
+                </span>
+              <% end %>
+              <%= station[:name] %></button>
+            <% end %>
           </ul>
         </div>
       </div>
