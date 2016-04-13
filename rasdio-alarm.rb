@@ -13,6 +13,7 @@ get '/index' do
     { :name => 'FluxFM', :active => false },
     { :name => 'NPR Berlin', :active => false },
     { :name => 'Fritz', :active => false }]
+
   erb :index, :locals => {:stations => stations}
 end
 
@@ -22,4 +23,10 @@ end
 
 get '/play' do
   `mpc play`
+end
+
+post '/controls' do
+  @action = params[:action]
+
+  puts @action
 end
