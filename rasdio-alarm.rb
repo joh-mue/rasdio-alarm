@@ -28,5 +28,5 @@ end
 post '/controls' do
   @action = params[:action]
 
-  puts @action
+  `mpc #{action}`
 end
