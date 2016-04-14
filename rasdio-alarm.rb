@@ -26,7 +26,7 @@ get '/play' do
 end
 
 post '/controls' do
-  @action = params[:action]
+  action = params[:action]
 
   `mpc #{action}`
 end
